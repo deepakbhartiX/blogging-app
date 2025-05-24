@@ -6,7 +6,11 @@
 
 </head>
 <body>
-    <%- include('./partials/nav') %>
+    <% if (locals.user) { %>
+     <div><%= locals.user %></div>
+    <% } %>
+
+    <%- include('./partials/nav') %>  <%= JSON.stringify(user) %>
     <%- include('./partials/script') %>
 </body>
 </html>
