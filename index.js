@@ -8,8 +8,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cookiePaser = require('cookie-parser')
 const {checkForAuthenticationCookie} = require("./middleware/authentication")
-
-
+const {Blog} = require('./models/blog')
 
 mongoose.connect('mongodb://localhost:27017/Blogging').then((e)=> console.log("mongodb connected"))
 
@@ -18,6 +17,7 @@ app.use(express.urlencoded({extended:false}));
 app.set("view engine","ejs");
 app.set('views',path.resolve('./views'))
 
+app.use(express.static(path.resolve("./public")));
 
 app.use(cookiePaser())
 
@@ -29,10 +29,12 @@ app.use(checkForAuthenticationCookie("token"))
 
 app.use(router,staticrouter,blogrouter)
 
-router.get('/',(req,res)=>{ 
-    console.log(req.user)
+router.get('/',async(req,res)=>{ 
+  
+    const allBlogs = await Blog.find({})
      return res.render('home',{
         user:req.user,
+        blogs:allBlogs,
      });
 })
 
@@ -40,3 +42,4 @@ router.get('/',(req,res)=>{
 app.listen(PORT,()=>{
     console.log(`listen on ${PORT}`);
 })
+
