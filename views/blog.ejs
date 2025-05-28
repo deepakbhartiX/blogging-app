@@ -35,6 +35,14 @@
         </form>
        
      <% } %>
+        
+     <% comments.forEach(comment => { %>
+        <div class="container mt-4">
+        <img src="<%= comment.createdBy.profileImageURL%>" width="50px" > <%= comment.createdBy.fullname %> <h3> <%= comment.content %></h3>
+        </div>
+
+     <% }) %>
+
     </div>
 
     <%- include('./partials/script') %>

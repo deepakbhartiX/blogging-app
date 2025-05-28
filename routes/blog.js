@@ -47,7 +47,7 @@ staticrouter.get('/:id',async(req,res)=>{
     const comments = await Comment.find({blogId:req.params.id}).populate("createdBy");
 
 
-   console.log(blog._id)
+//    console.log(comments)
     return res.render('blog',{
         user:req.user,
         blog:blog,
@@ -56,7 +56,7 @@ staticrouter.get('/:id',async(req,res)=>{
 })
 
 
-staticrouter.post('/comment/:BlogId',async(req,res)=>{
+staticrouter.post('/comment/:blogId',async(req,res)=>{
    const comment = await Comment.create({
      content:req.body.content,
      blogId: req.params.blogId,
