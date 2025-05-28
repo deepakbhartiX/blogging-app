@@ -30,7 +30,7 @@ app.use(checkForAuthenticationCookie("token"))
 app.use(router,staticrouter,blogrouter)
 
 router.get('/',async(req,res)=>{ 
-    console.log(req.user)
+    // console.log(req.user)
     const allBlogs = await Blog.find({})
      return res.render('home',{
         user:req.user,
