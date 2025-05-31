@@ -45,7 +45,9 @@ router.get('/',async(req,res)=>{
   
 
 
-app.listen(process.env.PORT,()=>{
-    console.log(`listen on ${process.env.PORT}`);
-})
+// app.listen(process.env.PORT,()=>{
+//     console.log(`listen on ${process.env.PORT}`);
+// })
 
+
+module.exports = app;
