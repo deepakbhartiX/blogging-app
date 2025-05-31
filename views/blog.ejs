@@ -22,7 +22,7 @@
     </div>
 
     <div class="container mt-3">
-     <h1>Comment</h1>
+     <h1>Comment (<%= comments.length %>)</h1>
 
 
      <% if (locals.user) { %>
@@ -38,7 +38,7 @@
         
      <% comments.forEach(comment => { %>
         <div class="container mt-4">
-        <img src="<%= comment.createdBy.profileImageURL%>" width="50px" > <%= comment.createdBy.fullname %> <h3> <%= comment.content %></h3>
+        <img src="<%= comment.createdBy.profileImageURL%>" width="50px" > <%= comment.createdBy.fullname %> <h5> <%= comment.content %></h5>
         </div>
 
      <% }) %>
