@@ -6,8 +6,8 @@
     "node": "22.x"
   },
   "scripts": {
-    "start": "node  api/app.js",
-    "dev": "nodemon api/app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",

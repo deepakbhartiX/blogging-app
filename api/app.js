@@ -1,4 +1,4 @@
-const serverless = require("serverless-http");
-const app = require("../app"); // Import your Express app
+// const serverless = require("serverless-http");
+// const app = require("../app"); // Import your Express app
 
-module.exports = serverless(app);
+// module.exports = serverless(app);

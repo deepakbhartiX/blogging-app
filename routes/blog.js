@@ -42,6 +42,9 @@ staticrouter.post('/add-new-blog',upload.single('coverimage'),async(req,res)=>{
 
 
 staticrouter.get('/:id',async(req,res)=>{
+
+     
+
     const blog = await Blog.findById(req.params.id).populate('createdBy');
 
     const comments = await Comment.find({blogId:req.params.id}).populate("createdBy");
