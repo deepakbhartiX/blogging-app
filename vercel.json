@@ -7,3 +7,5 @@
     { "src": "/(.*)", "dest": "/" }
   ]
 }
+
+this is main
