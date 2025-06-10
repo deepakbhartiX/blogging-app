@@ -36,7 +36,7 @@ staticrouter.post('/add-new-blog',upload.single('coverimage'),async(req,res)=>{
      })
 
 
-
+     
     return res.redirect(`/${blog._id}`);
 })
 
