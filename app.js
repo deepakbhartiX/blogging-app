@@ -29,6 +29,10 @@ app.use(cookiePaser())
 app.use(checkForAuthenticationCookie("token"))
 
 
+//seting this because it send '/favicon.ico' on / router thus in 'app.get('/:id')' is misunderstand favicon.ico as id and thus give mongodb cast error like  this -- "app.get('/favicon.ico', (req, res) => res.status(204).end());
+
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 //all router are mount in express router
 
 app.use(router,staticrouter,blogrouter)
